@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "pM3ksty9QMpuvVost4yiB5bcGljr9OGWV9oxrIxcXcs=",
+  "Source": "InventoryManagement.Db",
+  "BasePath": "_content/InventoryManagement.Db",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Api", "InventoryManagement.Api\InventoryManagement.Api.csproj", "{E7F51A2A-A64D-45AC-811C-72C4670FDD83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Db", "InventoryManagement.Db\InventoryManagement.Db.csproj", "{E9612A41-8A06-41E4-B3B0-629CAB72AFEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7F51A2A-A64D-45AC-811C-72C4670FDD83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7F51A2A-A64D-45AC-811C-72C4670FDD83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7F51A2A-A64D-45AC-811C-72C4670FDD83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7F51A2A-A64D-45AC-811C-72C4670FDD83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9612A41-8A06-41E4-B3B0-629CAB72AFEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9612A41-8A06-41E4-B3B0-629CAB72AFEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9612A41-8A06-41E4-B3B0-629CAB72AFEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9612A41-8A06-41E4-B3B0-629CAB72AFEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+EndGlobal
