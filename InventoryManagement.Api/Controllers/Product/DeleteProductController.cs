@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InventoryManagement.Api.Controllers.Product;
-
+ 
 public class DeleteProductController : ControllerBase
 {
     private readonly IDeleteProductCommand _deleteProductCommand;
