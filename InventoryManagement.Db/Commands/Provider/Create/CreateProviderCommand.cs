@@ -14,7 +14,12 @@ public class CreateProviderCommand : ICreateProviderCommand
 
     public async Task Execute(CreateProviderDto data)
     {
-        ProviderEntity entity = new();
+        ProviderEntity entity = new ProviderEntity
+        {
+            SupplierId = data.SupplierId,
+            SupplierPhone = data.SupplierPhone,
+            SupplierName = data.SupplierName
+        };
         
         _context.Providers.Add(entity);
         _context.SaveChangesAsync();

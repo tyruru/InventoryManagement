@@ -16,7 +16,13 @@ public class CreateInventoryItemCommand : ICreateInventoryItemCommand
 
     public async Task Execute(CreateInventoryItemDto data)
     {
-        InventoryItemEntity entity = new();
+        InventoryItemEntity entity = new InventoryItemEntity
+        {
+            InventoryItemId = data.InventoryItemId,
+            ProductId = data.ProductId,
+            LocationId = data.LocationId,
+            Quantity = data.Quantity
+        };
 
         _context.InventoryItems.Add(entity);
         await _context.SaveChangesAsync();

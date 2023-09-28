@@ -14,7 +14,13 @@ public class CreateProductCommand : ICreateProductCommand
 
     public async Task Execute(CreateProductDto data)
     {
-        ProductEntity entity = new();
+        ProductEntity entity = new ProductEntity
+        {
+            ProductId = data.ProductId,
+            Price = data.Price,
+            Quantity = data.Quantity,
+            Name = data.Name
+        };
 
         _context.Products.Add(entity);
         _context.SaveChangesAsync();
