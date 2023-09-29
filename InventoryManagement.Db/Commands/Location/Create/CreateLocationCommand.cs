@@ -14,8 +14,13 @@ public class CreateLocationCommand : ICreateLocationCommand
 
     public async Task Execute(CreateLocationDto data)
     {
-        LocationEntity entity = new();
-
+        LocationEntity entity = new LocationEntity()
+        {   
+            LocationId = data.LocationId,
+            LocationAddress = data.LocationAddress,
+            LocationName = data.LocationName
+        };
+        
         _context.Locations.Add(entity);
         _context.SaveChangesAsync();
     }
