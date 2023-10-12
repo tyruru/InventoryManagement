@@ -27,6 +27,13 @@
 
 
 
+
+    <ItemGroup>
+      <Folder Include="Cqrs\Location\Queries\FindLocation\" />
+      <Folder Include="Cqrs\Product\" />
+      <Folder Include="Cqrs\Provider\" />
+    </ItemGroup>
+
     </ItemGroup>
 
 
