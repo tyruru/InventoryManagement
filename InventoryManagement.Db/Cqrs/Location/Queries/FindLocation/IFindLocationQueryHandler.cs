@@ -3,7 +3,7 @@ using InventoryManagement.Db.Dtos.Location;
 
 namespace InventoryManagement.Db.Cqrs.Location.Queries.FindLocation;
 
-public interface IFindLocationQueryHandler : IQueryHandler<FindLocationQuery, LocationInfoDto>
+public interface IFindLocationQueryHandler : IQueryHandler<FindLocationQuery, LocationInfoDto?>
 {
     
 }
