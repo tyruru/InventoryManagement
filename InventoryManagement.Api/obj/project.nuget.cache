@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NUYMZKAtsy6/l9MuNNhCegHu6K5yl9hGSOYWYz/8gmVt228Nr438yuQl5Pt6Z9irO3H1ITFquqElwfcIUmNwFA==",
+  "dgSpecHash": "9luAtdZzr6F9k0pvqpiqm12kyJyYCG4ypdwSdFPkDBcQyStFHfFDwLC5BBWEjoJBDrPqS7Flt79psEQmBKZz7g==",
   "success": true,
-  "projectFilePath": "/Users/denis/RiderProjects/InventoryManagementCqrsNew/InventoryManagement.Api/InventoryManagement.Api.csproj",
+  "projectFilePath": "/Users/denis/RiderProjects/InventoryManagementCQRS/InventoryManagement.Api/InventoryManagement.Api.csproj",
   "expectedPackageFiles": [
     "/Users/denis/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/denis/.nuget/packages/microsoft.entityframeworkcore/7.0.11/microsoft.entityframeworkcore.7.0.11.nupkg.sha512",
