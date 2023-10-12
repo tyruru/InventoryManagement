@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 
 namespace InventoryManagement.Db.Data.UnitOfWork;
 
-public class UnitOfWork
+public class UnitOfWork : IUnitOfWork
 {
     private readonly InventoryManagementDbContext _context;
     private readonly IRepositoryFactory _repositoryFactory;
