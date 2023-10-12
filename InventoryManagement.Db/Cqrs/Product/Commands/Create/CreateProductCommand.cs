@@ -1,13 +1,16 @@
-namespace InventoryManagement.Db.Dtos.Product;
 
-public sealed class ProductInfoDto
+using InventoryManagement.Db.Cqrs.Core.Command;
+
+namespace InventoryManagement.Db.Cqrs.Product.Commands.Create;
+
+public sealed class CreateProductCommand : ICommand
 {
     public int ProductId { get; set; }
     public float Price { get; set; }
     public int Quantity { get; set; }
     public string Name { get; set; }
 
-    public ProductInfoDto(int productId, float price, int quantity, string name)
+    public CreateProductCommand(int productId, int price, int quantity, string name)
     {
         ProductId = productId;
         Price = price;

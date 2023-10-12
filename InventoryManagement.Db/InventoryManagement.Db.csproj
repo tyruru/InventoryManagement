@@ -29,7 +29,6 @@
 
 
     <ItemGroup>
-      <Folder Include="Cqrs\Product\" />
       <Folder Include="Cqrs\Provider\" />
     </ItemGroup>
 
