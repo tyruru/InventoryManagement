@@ -1,6 +1,11 @@
+using System.Linq.Expressions;
+using FluentValidation;
+using FluentValidation.Results;
 using InventoryManagement.Api.RestModels;
-using InventoryManagement.Db.Commands.InventoryItem.Create;
+using InventoryManagement.Db.Cqrs.Core.InventoryItem.Commands.Create;
+using InventoryManagement.Db.Cqrs.Core.InventoryItem.Queries.FindInventoryItem;
 using InventoryManagement.Db.Data.Entities;
+using InventoryManagement.Db.Dtos.InventoryItem;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InventoryManagement.Api.Controllers.InventoryItem;
@@ -11,25 +16,54 @@ namespace InventoryManagement.Api.Controllers.InventoryItem;
 
 public sealed class CreateInventoryItemController : ControllerBase
 {
-    private readonly ICreateInventoryItemCommand _createInventoryItem;
-
-    public CreateInventoryItemController(ICreateInventoryItemCommand createInventoryItem)
+    private readonly IValidator<CreateInventoryItemRequest> _validator;
+    private readonly ICreateInventoryItemCommandHandler _createInventoryItemCommandHandler;
+    private readonly IFindInventoryItemQueryHandler _findInventoryItemQueryHandler;
+    private readonly ILogger<CreateInventoryItemController> _logger;
+ 
+    public CreateInventoryItemController(
+        IValidator<CreateInventoryItemRequest> validator,
+        ICreateInventoryItemCommandHandler createInventoryItemCommandHandler,
+        IFindInventoryItemQueryHandler findInventoryItemQueryHandler,
+        ILogger<CreateInventoryItemController> logger)
     {
-        _createInventoryItem = createInventoryItem;
+        _validator = validator;
+        _createInventoryItemCommandHandler = createInventoryItemCommandHandler;
+        _findInventoryItemQueryHandler = findInventoryItemQueryHandler;
+        _logger = logger;
     }
 
     [HttpPost("Create")]
-    public async Task<IActionResult> Create([FromBody] CreateInventoryItemRequest request)
+    public async Task<ActionResult<CreateInventoryItemResponse>> Create([FromBody] CreateInventoryItemRequest request)
     {
-        
-        CreateInventoryItemDto dto = new CreateInventoryItemDto(
-            request.InventoryItemId,
-            request.ProductId,
-            request.LocationId,
-            request.Quantity);
-        
-        await _createInventoryItem.Execute(dto);
+        ValidationResult validationResult = await _validator.ValidateAsync(request);
 
-        return Ok();
+        if (!validationResult.IsValid)
+        {
+            return BadRequest(validationResult.Errors
+                .Select(e => new { e.PropertyName, e.ErrorMessage }));
+        }
+
+        try
+        {
+            CreateInventoryItemCommand createInventoryItemCommand = new(
+                request.InventoryItemId,
+                request.ProductId,
+                request.LocationId,
+                request.Quantity);
+
+            await _createInventoryItemCommandHandler.Handle(createInventoryItemCommand);
+
+            InventoryItemInfoDto? inventoryItemInfo =
+                await _findInventoryItemQueryHandler.Handle(new FindInventoryItemQuery(request.InventoryItemId));
+            
+            
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            throw;
+        }
     }
 }
