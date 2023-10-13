@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "9luAtdZzr6F9k0pvqpiqm12kyJyYCG4ypdwSdFPkDBcQyStFHfFDwLC5BBWEjoJBDrPqS7Flt79psEQmBKZz7g==",
+  "dgSpecHash": "S2VNy7MiLD3dcGCBMKP3vax6i96Q4LENlCezpoUYMBvHoRmUUzv7NCRE/kqm9Bsl1ab9F50W4vzjXzlQCvcr/Q==",
   "success": true,
-  "projectFilePath": "/Users/denis/RiderProjects/InventoryManagementCQRS/InventoryManagement.Api/InventoryManagement.Api.csproj",
+  "projectFilePath": "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Api/InventoryManagement.Api.csproj",
   "expectedPackageFiles": [
+    "/Users/denis/.nuget/packages/fluentvalidation/11.5.1/fluentvalidation.11.5.1.nupkg.sha512",
+    "/Users/denis/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/Users/denis/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "/Users/denis/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/denis/.nuget/packages/microsoft.entityframeworkcore/7.0.11/microsoft.entityframeworkcore.7.0.11.nupkg.sha512",
     "/Users/denis/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.11/microsoft.entityframeworkcore.abstractions.7.0.11.nupkg.sha512",
