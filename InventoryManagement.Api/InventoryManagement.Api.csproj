@@ -21,7 +21,8 @@
 
 
     <ItemGroup>
-      <Folder Include="RestModels\Validators\" />
+      <Folder Include="RestModels\Validators\Product\" />
+      <Folder Include="RestModels\Validators\Provider\" />
     </ItemGroup>
 
 
