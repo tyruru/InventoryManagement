@@ -56,14 +56,31 @@ public sealed class CreateInventoryItemController : ControllerBase
 
             InventoryItemInfoDto? inventoryItemInfo =
                 await _findInventoryItemQueryHandler.Handle(new FindInventoryItemQuery(request.InventoryItemId));
-            
-            
+
+            if (inventoryItemInfo != null)
+            {
+                CreateInventoryItemResponse inventoryItemResponse = new(
+                    inventoryItemInfo.InventoryItemId,
+                    inventoryItemInfo.ProductId,
+                    inventoryItemInfo.LocationId,
+                    inventoryItemInfo.Quantity);
+
+                return Ok(inventoryItemResponse);
+            }
+            else
+            {
+                _logger.LogError("Couldn't find InventoryItem after creations");
+
+                return BadRequest();
+            }
 
         }
         catch (Exception ex)
         {
-            Console.WriteLine(ex);
-            throw;
+           _logger.LogError(ex, "Error occured during the InventoryItem creation process");
+           
+           return Problem("Something went wrong");
+
         }
     }
 }
