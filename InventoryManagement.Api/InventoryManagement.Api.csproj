@@ -20,10 +20,6 @@
       <ProjectReference Include="..\InventoryManagement.Db\InventoryManagement.Db.csproj" />
 
 
-    <ItemGroup>
-      <Folder Include="RestModels\Validators\Product\" />
-      <Folder Include="RestModels\Validators\Provider\" />
-    </ItemGroup>
 
 
     </ItemGroup>

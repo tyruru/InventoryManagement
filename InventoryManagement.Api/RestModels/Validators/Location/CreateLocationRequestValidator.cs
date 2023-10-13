@@ -15,11 +15,11 @@ public class CreateLocationRequestValidator : AbstractValidator<CreateLocationRe
       RuleFor(x => x.LocationId)
          .NotNull()
          .NotEmpty()
-         .WithMessage("Quantity is required");
+         .WithMessage("LocationId is required");
       
       RuleFor(x => x.LocationName)
          .NotNull()
          .NotEmpty()
-         .WithMessage("Quantity is required");
+         .WithMessage("LocationName is required");
    }
 }
