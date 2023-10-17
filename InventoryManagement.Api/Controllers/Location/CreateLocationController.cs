@@ -30,7 +30,6 @@ public sealed class CreateLocationController : ControllerBase
         await _createLocationCommand.Execute(dto);
 
         return Ok();
-        
     }
 
 }
