@@ -10,7 +10,7 @@ public sealed class CreateProductCommand : ICommand
     public int Quantity { get; set; }
     public string Name { get; set; }
 
-    public CreateProductCommand(int productId, int price, int quantity, string name)
+    public CreateProductCommand(int productId, float price, int quantity, string name)
     {
         ProductId = productId;
         Price = price;
