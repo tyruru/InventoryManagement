@@ -1033,11 +1033,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/denis/RiderProjects/InventoryManagementCQRS2/InventoryManagement.Db/InventoryManagement.Db.csproj",
+      "projectUniqueName": "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Db/InventoryManagement.Db.csproj",
       "projectName": "InventoryManagement.Db",
-      "projectPath": "/Users/denis/RiderProjects/InventoryManagementCQRS2/InventoryManagement.Db/InventoryManagement.Db.csproj",
+      "projectPath": "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Db/InventoryManagement.Db.csproj",
       "packagesPath": "/Users/denis/.nuget/packages/",
-      "outputPath": "/Users/denis/RiderProjects/InventoryManagementCQRS2/InventoryManagement.Db/obj/",
+      "outputPath": "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Db/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/denis/.nuget/NuGet/NuGet.Config"
