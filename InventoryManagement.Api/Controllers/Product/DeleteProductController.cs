@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InventoryManagement.Api.Controllers.Product;
  
+[ApiController]
+[Route("Product")]
+[ApiExplorerSettings(GroupName = "Products")]
 public sealed class DeleteProductController : ControllerBase
 {
     private readonly IDeleteProductCommandHandler _deleteProductCommandHandler;
