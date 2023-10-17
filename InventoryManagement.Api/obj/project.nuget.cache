@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S2VNy7MiLD3dcGCBMKP3vax6i96Q4LENlCezpoUYMBvHoRmUUzv7NCRE/kqm9Bsl1ab9F50W4vzjXzlQCvcr/Q==",
+  "dgSpecHash": "nLi7bcvbOPIiGT6w7jvdpT2Ok2iaPTzlFFIPBYNTf3D5T1ISkbYs1hwLS6eU1D2nvAsfEW9L/6SfpFBLh0okcQ==",
   "success": true,
-  "projectFilePath": "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Api/InventoryManagement.Api.csproj",
+  "projectFilePath": "/Users/denis/RiderProjects/InventoryManagementCqrs/InventoryManagement.Api/InventoryManagement.Api.csproj",
   "expectedPackageFiles": [
     "/Users/denis/.nuget/packages/fluentvalidation/11.5.1/fluentvalidation.11.5.1.nupkg.sha512",
     "/Users/denis/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
