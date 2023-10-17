@@ -12,7 +12,7 @@ namespace InventoryManagement.Api.Controllers.Product;
 [Route("Product")]
 [ApiExplorerSettings(GroupName = "Products")]
 
-public class CreateProductController : ControllerBase
+public sealed class CreateProductController : ControllerBase
 {
     private readonly IValidator<CreateProductRequest> _validator;
     private readonly ICreateProductCommandHandler _createProductCommandHandler;

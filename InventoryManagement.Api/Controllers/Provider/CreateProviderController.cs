@@ -12,7 +12,7 @@ namespace InventoryManagement.Api.Controllers.Provider;
 [Route("Provider")]
 [ApiExplorerSettings(GroupName = "Providers")]
 
-public class CreateProviderController : ControllerBase
+public sealed class CreateProviderController : ControllerBase
 {
     private readonly IValidator<CreateProviderRequest> _validator;
     private readonly ICreateProviderCommandHandler _createProviderCommandHandler;

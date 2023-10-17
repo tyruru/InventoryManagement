@@ -17,6 +17,11 @@ public sealed class ProductRepository : IProductRepository
         await _context.Products.AddAsync(entity);
     }
 
+    public async Task Delete(ProductEntity entity)
+    {
+        _context.Products.Remove(entity);
+    }
+
     public async Task<ProductEntity?> FindSingle(int productId)
     {
         return await _context.Products.SingleOrDefaultAsync(p => p.ProductId == productId);
