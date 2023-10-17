@@ -1,5 +1,9 @@
+using FluentValidation;
+using FluentValidation.Results;
 using InventoryManagement.Api.RestModels.Provider;
-using InventoryManagement.Db.Commands.Provider;
+using InventoryManagement.Db.Cqrs.Provider.Commands;
+using InventoryManagement.Db.Cqrs.Provider.Queries.Find;
+using InventoryManagement.Db.Dtos.Provider;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InventoryManagement.Api.Controllers.Provider;
@@ -10,24 +14,68 @@ namespace InventoryManagement.Api.Controllers.Provider;
 
 public class CreateProviderController : ControllerBase
 {
-    private readonly ICreateProviderCommand _createProviderCommand;
-
-    public CreateProviderController(ICreateProviderCommand createProviderCommand)
+    private readonly IValidator<CreateProviderRequest> _validator;
+    private readonly ICreateProviderCommandHandler _createProviderCommandHandler;
+    private readonly IFindProviderQueryHandler _findProviderQueryHandler;
+    private readonly ILogger<CreateProviderController> _logger;
+ 
+    public CreateProviderController(
+        IValidator<CreateProviderRequest> validator,
+        ICreateProviderCommandHandler createProviderCommandHandler,
+        IFindProviderQueryHandler findProviderQueryHandler,
+        ILogger<CreateProviderController> logger)
     {
-        _createProviderCommand = createProviderCommand;
+        _validator = validator;
+        _createProviderCommandHandler = createProviderCommandHandler;
+        _findProviderQueryHandler = findProviderQueryHandler;
+        _logger = logger;
     }
 
     [HttpPost("Create")]
-
-    public async Task<IActionResult> Create(CreateProviderRequest request)
+    public async Task<ActionResult<CreateProviderResponce>> Create([FromBody] CreateProviderRequest request)
     {
-        CreateProviderDto dto = new(
-            request.SupplierId,
-            request.SupplierName,
-            request.SupplierPhone);
+        ValidationResult validationResult = await _validator.ValidateAsync(request);
 
-        await _createProviderCommand.Execute(dto);
+        if (!validationResult.IsValid)
+        {
+            return BadRequest(validationResult.Errors
+                .Select(e => new { e.PropertyName, e.ErrorMessage }));
+        }
 
-        return Ok();
+        try
+        {
+            CreateProviderCommand createProviderCommand = new(
+                request.SupplierId,
+                request.SupplierName,
+                request.SupplierPhone);
+
+            await _createProviderCommandHandler.Handle(createProviderCommand);
+
+            ProviderInfoDto? providerInfo =
+                await _findProviderQueryHandler.Handle(new FindProviderQuery(request.SupplierId));
+
+            if (providerInfo != null)
+            {
+                CreateProviderResponce providerResponse = new(
+                    request.SupplierId,
+                    request.SupplierName,
+                    request.SupplierPhone);
+
+                return Ok(providerResponse);
+            }
+            else
+            {
+                _logger.LogError("Couldn't find Provider after creations");
+
+                return BadRequest();
+            }
+
+        }
+        catch (Exception ex)
+        {
+           _logger.LogError(ex, "Error occured during the Provider creation process");
+
+           return Problem("Something went wrong");
+        }
     }
 }

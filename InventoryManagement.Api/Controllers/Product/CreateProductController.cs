@@ -1,6 +1,5 @@
 using FluentValidation;
 using FluentValidation.Results;
-using InventoryManagement.Api.RestModels.Location;
 using InventoryManagement.Api.RestModels.Product;
 using InventoryManagement.Db.Cqrs.Product.Commands.Create;
 using InventoryManagement.Db.Cqrs.Product.Queries.Find;
