@@ -1,11 +1,7 @@
-using System.Security.Authentication;
-using InventoryManagement.Api.Controllers.InventoryItem;
-using InventoryManagement.Api.RestModels;
+using InventoryManagement.Api.RestModels.Validators;
 using Microsoft.AspNetCore.Mvc.Controllers;
-using InventoryManagement.Db.Commands;
-using InventoryManagement.Db.Commands.InventoryItem.Create;
-using InventoryManagement.Db.Data;
 using InventoryManagement.Db.Extensions;
+using InventoryManagement.Db.Extensions.CQRS;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,10 +9,9 @@ builder
     .Services
     .AddInventoryManagementData(
         "USER ID=postgres;Password=1234;Server=localhost;Port=5432;Database=InventoryManagement2;Integrated Security=true;Pooling=true")
-    .AddInventoryItemCommads()
-    .AddLocationCommands()
-    .AddProductCommands()
-    .AddProviderCommands();
+    .AddValidators()
+    .AddDataAccess()
+    .AddCQRS();
 
 
 builder.Services.AddControllers();
