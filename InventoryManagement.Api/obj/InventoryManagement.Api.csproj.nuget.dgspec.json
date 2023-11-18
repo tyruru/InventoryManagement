@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Api/InventoryManagement.Api.csproj": {}
+    "/Users/denis/RiderProjects/InventoryManagementCqrs/InventoryManagement.Api/InventoryManagement.Api.csproj": {}
   },
   "projects": {
-    "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Api/InventoryManagement.Api.csproj": {
+    "/Users/denis/RiderProjects/InventoryManagementCqrs/InventoryManagement.Api/InventoryManagement.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Api/InventoryManagement.Api.csproj",
+        "projectUniqueName": "/Users/denis/RiderProjects/InventoryManagementCqrs/InventoryManagement.Api/InventoryManagement.Api.csproj",
         "projectName": "InventoryManagement.Api",
-        "projectPath": "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Api/InventoryManagement.Api.csproj",
+        "projectPath": "/Users/denis/RiderProjects/InventoryManagementCqrs/InventoryManagement.Api/InventoryManagement.Api.csproj",
         "packagesPath": "/Users/denis/.nuget/packages/",
-        "outputPath": "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Api/obj/",
+        "outputPath": "/Users/denis/RiderProjects/InventoryManagementCqrs/InventoryManagement.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/denis/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Db/InventoryManagement.Db.csproj": {
-                "projectPath": "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Db/InventoryManagement.Db.csproj"
+              "/Users/denis/RiderProjects/InventoryManagementCqrs/InventoryManagement.Db/InventoryManagement.Db.csproj": {
+                "projectPath": "/Users/denis/RiderProjects/InventoryManagementCqrs/InventoryManagement.Db/InventoryManagement.Db.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Db/InventoryManagement.Db.csproj": {
+    "/Users/denis/RiderProjects/InventoryManagementCqrs/InventoryManagement.Db/InventoryManagement.Db.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Db/InventoryManagement.Db.csproj",
+        "projectUniqueName": "/Users/denis/RiderProjects/InventoryManagementCqrs/InventoryManagement.Db/InventoryManagement.Db.csproj",
         "projectName": "InventoryManagement.Db",
-        "projectPath": "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Db/InventoryManagement.Db.csproj",
+        "projectPath": "/Users/denis/RiderProjects/InventoryManagementCqrs/InventoryManagement.Db/InventoryManagement.Db.csproj",
         "packagesPath": "/Users/denis/.nuget/packages/",
-        "outputPath": "/Users/denis/RiderProjects/InventoryManagement/InventoryManagement.Db/obj/",
+        "outputPath": "/Users/denis/RiderProjects/InventoryManagementCqrs/InventoryManagement.Db/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/denis/.nuget/NuGet/NuGet.Config"

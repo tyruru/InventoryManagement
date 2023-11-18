@@ -1,10 +1,8 @@
-using System.Linq.Expressions;
 using FluentValidation;
 using FluentValidation.Results;
 using InventoryManagement.Api.RestModels;
 using InventoryManagement.Db.Cqrs.Core.InventoryItem.Commands.Create;
 using InventoryManagement.Db.Cqrs.Core.InventoryItem.Queries.FindInventoryItem;
-using InventoryManagement.Db.Data.Entities;
 using InventoryManagement.Db.Dtos.InventoryItem;
 using Microsoft.AspNetCore.Mvc;
 
@@ -78,9 +76,8 @@ public sealed class CreateInventoryItemController : ControllerBase
         catch (Exception ex)
         {
            _logger.LogError(ex, "Error occured during the InventoryItem creation process");
-           
-           return Problem("Something went wrong");
 
+           return Problem("Something went wrong");
         }
     }
 }

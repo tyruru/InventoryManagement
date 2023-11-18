@@ -1,28 +1,35 @@
 using InventoryManagement.Api.RestModels.Product;
-using InventoryManagement.Db.Commands.Product.Delete;
-using Microsoft.AspNetCore.Http.HttpResults;
+using InventoryManagement.Db.Cqrs.Product.Commands.Delete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InventoryManagement.Api.Controllers.Product;
  
-public class DeleteProductController : ControllerBase
+[ApiController]
+[Route("Product")]
+[ApiExplorerSettings(GroupName = "Products")]
+public sealed class DeleteProductController : ControllerBase
 {
-    private readonly IDeleteProductCommand _deleteProductCommand;
+    private readonly IDeleteProductCommandHandler _deleteProductCommandHandler;
 
-    public DeleteProductController(IDeleteProductCommand deleteProductCommand)
+    public DeleteProductController(IDeleteProductCommandHandler deleteProductCommandHandler)
     {
-        _deleteProductCommand = deleteProductCommand;
+        _deleteProductCommandHandler = deleteProductCommandHandler;
     }
 
     [HttpDelete("Delete")]
 
-    public async Task<IActionResult> Delete([FromBody] DeleteProductRequest request)
+    public async Task<ActionResult<DeleteProductResponse>> Delete([FromBody] DeleteProductRequest request)
     {
-        DeleteProductDto dto = new(
-            request.ProductId);
+        try
+        {
+            DeleteProductCommand deleteProductCommand = new(request.ProductId);
 
-        
-        await _deleteProductCommand.Execute(dto);
-        return Ok();
+            await _deleteProductCommandHandler.Handle(deleteProductCommand);
+            return Ok("Account was deleted");
+        }
+        catch (Exception ex)
+        {
+            return BadRequest($"Account was not deleted: {ex.Message}");
+        }
     }
 }

@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "uaiRX6QjgqFL/UqbRhx3vHd780HJeP0bS5jr4T8NYDo=",
+  "Hash": "yAevOCYkIurYxRD9Dz+KiYxrk9JkDMSnuVEFEItYByE=",
   "Source": "InventoryManagement.Api",
   "BasePath": "_content/InventoryManagement.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "/Users/denis/RiderProjects/InventoryManagement2/InventoryManagement.Db/InventoryManagement.Db.csproj",
+      "Identity": "/Users/denis/RiderProjects/InventoryManagementCqrs/InventoryManagement.Db/InventoryManagement.Db.csproj",
       "Version": 2,
       "Source": "InventoryManagement.Db",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
